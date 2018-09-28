@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunProStatistics", "FunProStatistics\FunProStatistics.csproj", "{82D0633C-25F2-4D6E-9963-CC867A573D5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82D0633C-25F2-4D6E-9963-CC867A573D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D0633C-25F2-4D6E-9963-CC867A573D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D0633C-25F2-4D6E-9963-CC867A573D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D0633C-25F2-4D6E-9963-CC867A573D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {522AB263-6D4B-4032-B3FC-7614D3AF2D03}
+	EndGlobalSection
+EndGlobal
