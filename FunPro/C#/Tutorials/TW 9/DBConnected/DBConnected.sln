@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBConnected", "DBConnected\DBConnected.csproj", "{FDF38DEB-CAF6-4B26-923E-6587188DF096}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDF38DEB-CAF6-4B26-923E-6587188DF096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF38DEB-CAF6-4B26-923E-6587188DF096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF38DEB-CAF6-4B26-923E-6587188DF096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF38DEB-CAF6-4B26-923E-6587188DF096}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7890D730-B042-444C-BB22-7646A3A48527}
+	EndGlobalSection
+EndGlobal
