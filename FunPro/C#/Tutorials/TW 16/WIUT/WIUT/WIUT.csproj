@@ -92,15 +92,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WIUT.DAL\WIUT.DAL.csproj">
-      <Project>{7d67f8f1-c0c7-45bf-9414-ce45b0f53b9c}</Project>
-      <Name>WIUT.DAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="WIUT.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WIUT.DAL\WIUT.DAL.csproj">
+      <Project>{7D67F8F1-C0C7-45BF-9414-CE45B0F53B9C}</Project>
+      <Name>WIUT.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
