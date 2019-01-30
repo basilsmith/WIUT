@@ -6,14 +6,14 @@ namespace WIUT.DAL
 {
     public class ApplicantList
     {
-        public List<Applicant> GetAllaApplicants()
+        public List<Applicant> GetAllApplicants()
         {
             return new ApplicantManager().GetAll();
         }
 
         public List<Applicant> Sort(ByAttribute attribute)
         {
-            var result = GetAllaApplicants();
+            var result = GetAllApplicants();
 
             switch (attribute)
             {
@@ -71,13 +71,13 @@ namespace WIUT.DAL
             switch (attribute)
             {
                 case ByAttribute.Name:
-                    return GetAllaApplicants().OrderBy(a => a.Name).ToList();
+                    return GetAllApplicants().OrderBy(a => a.Name).ToList();
                 case ByAttribute.Surname:
-                    return GetAllaApplicants().OrderBy(a => a.Name).ToList();
+                    return GetAllApplicants().OrderBy(a => a.Name).ToList();
                 case ByAttribute.DoB:
-                    return GetAllaApplicants().OrderBy(a => a.DoB).ToList();
+                    return GetAllApplicants().OrderBy(a => a.DoB).ToList();
                 case ByAttribute.Course:
-                    return GetAllaApplicants().OrderBy(a => a.Course.Name).ToList();
+                    return GetAllApplicants().OrderBy(a => a.Course.Name).ToList();
             }
 
             //if we are here = something went wrong
@@ -89,9 +89,9 @@ namespace WIUT.DAL
             switch (attribute)
             {
                 case ByAttribute.Name:
-                    return GetAllaApplicants().Where(a => a.Name.Contains(value)).ToList();
+                    return GetAllApplicants().Where(a => a.Name.Contains(value)).ToList();
                 case ByAttribute.Surname:
-                    return GetAllaApplicants().Where(a => a.Surname.Contains(value)).ToList();
+                    return GetAllApplicants().Where(a => a.Surname.Contains(value)).ToList();
             }
 
             //if we are here = something went wrong
