@@ -21,5 +21,15 @@ namespace WIUT
             var form = new AboutForm();
             form.ShowDialog();
         }
+
+        private void allApplicantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MyForms.GetForm<ApplicantListForm>().Show();
+        }
+
+        private void allCoursesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MyForms.GetForm<CourseListForm>().Show();
+        }
     }
 }

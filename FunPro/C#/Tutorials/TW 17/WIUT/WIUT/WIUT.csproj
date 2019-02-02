@@ -60,7 +60,13 @@
     <Compile Include="ApplicantListForm.Designer.cs">
       <DependentUpon>ApplicantListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicantManager.cs" />
+    <Compile Include="CourseListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseListForm.Designer.cs">
+      <DependentUpon>CourseListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms.cs" />
     <Compile Include="ParentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <EmbeddedResource Include="ApplicantListForm.resx">
       <DependentUpon>ApplicantListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CourseListForm.resx">
+      <DependentUpon>CourseListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParentForm.resx">
       <DependentUpon>ParentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +96,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\WIUT.DAL.Applicant.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
