@@ -54,6 +54,12 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicantEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicantEditForm.Designer.cs">
+      <DependentUpon>ApplicantEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicantListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicantEditForm.resx">
+      <DependentUpon>ApplicantEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicantListForm.resx">
       <DependentUpon>ApplicantListForm.cs</DependentUpon>

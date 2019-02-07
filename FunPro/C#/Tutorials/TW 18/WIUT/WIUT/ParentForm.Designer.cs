@@ -106,6 +106,7 @@
             this.newCourseToolStripMenuItem.Name = "newCourseToolStripMenuItem";
             this.newCourseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newCourseToolStripMenuItem.Text = "New course";
+            this.newCourseToolStripMenuItem.Click += new System.EventHandler(this.newCourseToolStripMenuItem_Click);
             // 
             // allCoursesToolStripMenuItem
             // 

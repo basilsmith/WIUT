@@ -30,15 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cbxSearch = new System.Windows.Forms.ComboBox();
-            this.tbxSearch = new System.Windows.Forms.TextBox();
-            this.btnSort = new System.Windows.Forms.Button();
-            this.cbxSort = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +39,15 @@
             this.passportNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.applicantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.cbxSearch = new System.Windows.Forms.ComboBox();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
+            this.btnSort = new System.Windows.Forms.Button();
+            this.cbxSort = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +78,66 @@
             this.dgv.Size = new System.Drawing.Size(867, 378);
             this.dgv.TabIndex = 0;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // doBDataGridViewTextBoxColumn
+            // 
+            this.doBDataGridViewTextBoxColumn.DataPropertyName = "DoB";
+            this.doBDataGridViewTextBoxColumn.HeaderText = "DoB";
+            this.doBDataGridViewTextBoxColumn.Name = "doBDataGridViewTextBoxColumn";
+            this.doBDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maritalStatusDataGridViewTextBoxColumn
+            // 
+            this.maritalStatusDataGridViewTextBoxColumn.DataPropertyName = "MaritalStatus";
+            this.maritalStatusDataGridViewTextBoxColumn.HeaderText = "MaritalStatus";
+            this.maritalStatusDataGridViewTextBoxColumn.Name = "maritalStatusDataGridViewTextBoxColumn";
+            this.maritalStatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passportNoDataGridViewTextBoxColumn
+            // 
+            this.passportNoDataGridViewTextBoxColumn.DataPropertyName = "PassportNo";
+            this.passportNoDataGridViewTextBoxColumn.HeaderText = "PassportNo";
+            this.passportNoDataGridViewTextBoxColumn.Name = "passportNoDataGridViewTextBoxColumn";
+            this.passportNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // courseDataGridViewTextBoxColumn
+            // 
+            this.courseDataGridViewTextBoxColumn.DataPropertyName = "Course";
+            this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
+            this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
+            this.courseDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // applicantBindingSource
+            // 
+            this.applicantBindingSource.DataSource = typeof(WIUT.DAL.Applicant);
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -87,6 +147,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -97,6 +158,7 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -107,6 +169,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRefresh
             // 
@@ -174,66 +237,6 @@
             this.cbxSort.Name = "cbxSort";
             this.cbxSort.Size = new System.Drawing.Size(227, 21);
             this.cbxSort.TabIndex = 3;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // doBDataGridViewTextBoxColumn
-            // 
-            this.doBDataGridViewTextBoxColumn.DataPropertyName = "DoB";
-            this.doBDataGridViewTextBoxColumn.HeaderText = "DoB";
-            this.doBDataGridViewTextBoxColumn.Name = "doBDataGridViewTextBoxColumn";
-            this.doBDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maritalStatusDataGridViewTextBoxColumn
-            // 
-            this.maritalStatusDataGridViewTextBoxColumn.DataPropertyName = "MaritalStatus";
-            this.maritalStatusDataGridViewTextBoxColumn.HeaderText = "MaritalStatus";
-            this.maritalStatusDataGridViewTextBoxColumn.Name = "maritalStatusDataGridViewTextBoxColumn";
-            this.maritalStatusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passportNoDataGridViewTextBoxColumn
-            // 
-            this.passportNoDataGridViewTextBoxColumn.DataPropertyName = "PassportNo";
-            this.passportNoDataGridViewTextBoxColumn.HeaderText = "PassportNo";
-            this.passportNoDataGridViewTextBoxColumn.Name = "passportNoDataGridViewTextBoxColumn";
-            this.passportNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // courseDataGridViewTextBoxColumn
-            // 
-            this.courseDataGridViewTextBoxColumn.DataPropertyName = "Course";
-            this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
-            this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
-            this.courseDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // applicantBindingSource
-            // 
-            this.applicantBindingSource.DataSource = typeof(WIUT.DAL.Applicant);
             // 
             // ApplicantListForm
             // 

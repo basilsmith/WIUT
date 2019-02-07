@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WIUT.DAL;
 
@@ -29,7 +22,7 @@ namespace WIUT
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             dgv.DataMember = "";
             dgv.DataSource = null;
@@ -70,6 +63,34 @@ namespace WIUT
                 dgv.DataMember = "";
                 dgv.DataSource = null;
                 dgv.DataSource = new ApplicantList().Search(tbxSearch.Text, selectedAttribute);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            new ApplicantEditForm().CreateNewApplicant();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 0)
+                MessageBox.Show("Please select an applicant");
+            else
+            {
+                var c = (Applicant)dgv.SelectedRows[0].DataBoundItem;
+                new ApplicantEditForm().UpdateApplicant(c);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 0)
+                MessageBox.Show("Please select an applicant");
+            else
+            {
+                var c = (Applicant)dgv.SelectedRows[0].DataBoundItem;
+                new ApplicantManager().Delete(c.Id);
+                LoadData();
             }
         }
     }

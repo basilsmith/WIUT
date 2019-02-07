@@ -24,9 +24,11 @@ namespace WIUT.DAL
                     result.Sort(new BySurnameComparer());
                     return result;
                 case ByAttribute.DoB:
-                    break;
+                    result.Sort(new ByDoBComparer());
+                    return result;
                 case ByAttribute.Course:
-                    break;
+                    result.Sort(new ByCourseComparer());
+                    return result;
             }
 
             //if we are here - something went wrong
@@ -89,9 +91,9 @@ namespace WIUT.DAL
             switch (attribute)
             {
                 case ByAttribute.Name:
-                    return GetAllApplicants().Where(a => a.Name.Contains(value)).ToList();
+                    return GetAllApplicants().Where(a => a.Name.ToUpper().Contains(value.ToUpper())).ToList();
                 case ByAttribute.Surname:
-                    return GetAllApplicants().Where(a => a.Surname.Contains(value)).ToList();
+                    return GetAllApplicants().Where(a => a.Surname.ToUpper().Contains(value.ToUpper())).ToList();
             }
 
             //if we are here - something went wrong

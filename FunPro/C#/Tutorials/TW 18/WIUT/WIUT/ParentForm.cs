@@ -31,5 +31,10 @@ namespace WIUT
         {
             MyForms.GetForm<CourseListForm>().Show();
         }
+
+        private void newCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new CourseEditForm().CreateNewCourse();
+        }
     }
 }
