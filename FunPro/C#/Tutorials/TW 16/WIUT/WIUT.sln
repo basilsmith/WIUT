@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIUT", "WIUT\WIUT.csproj", "{3C859B7A-A2DC-4D78-B70B-6BDA29B82BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIUT.DAL", "WIUT.DAL\WIUT.DAL.csproj", "{7D67F8F1-C0C7-45BF-9414-CE45B0F53B9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C859B7A-A2DC-4D78-B70B-6BDA29B82BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C859B7A-A2DC-4D78-B70B-6BDA29B82BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C859B7A-A2DC-4D78-B70B-6BDA29B82BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C859B7A-A2DC-4D78-B70B-6BDA29B82BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D67F8F1-C0C7-45BF-9414-CE45B0F53B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D67F8F1-C0C7-45BF-9414-CE45B0F53B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D67F8F1-C0C7-45BF-9414-CE45B0F53B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D67F8F1-C0C7-45BF-9414-CE45B0F53B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82B361A1-8E27-4FBD-95AF-146494C4AFC5}
+	EndGlobalSection
+EndGlobal
