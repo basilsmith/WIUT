@@ -139,8 +139,6 @@ namespace DataControls
             }
             else
                 e.Cancel = true;
-
-
         }
 
         private void SaveData()
