@@ -15,14 +15,10 @@ namespace DataControls
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the //dbDataSet.tbCountry// table. You can move, or remove it, as needed.
-            tbCountryTableAdapter.Fill(dbDataSet.tbCountry);
-            //load data to in-memory dataset in correct order
             try
             {
                 tbCountryTableAdapter.Fill(dbDataSet.tbCountry);
                 tbTeacherTableAdapter.Fill(dbDataSet.tbTeacher);
-                EnableDisableButtons();
             }
             catch (Exception ex)
             {
@@ -37,24 +33,25 @@ namespace DataControls
         private void btnFirst_Click(object sender, EventArgs e)
         {
             tbTeacherBindingSource.MoveFirst();
-            EnableDisableButtons();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             tbTeacherBindingSource.MovePrevious();
-            EnableDisableButtons();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             tbTeacherBindingSource.MoveNext();
-            EnableDisableButtons();
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
             tbTeacherBindingSource.MoveLast();
+        }
+
+        private void tbTeacherBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
             EnableDisableButtons();
         }
 
@@ -106,7 +103,13 @@ namespace DataControls
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (tbTeacherBindingSource.Count > 0)
-                tbTeacherBindingSource.RemoveCurrent();
+            {
+                if (MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    tbTeacherBindingSource.RemoveCurrent();
+            }
+            else
+                MessageBox.Show("Nothing to delete");
+
         }
 
         #endregion
@@ -125,24 +128,34 @@ namespace DataControls
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Validate();
-            tbTeacherBindingSource.EndEdit();
-            if (dbDataSet.HasChanges())
+            if (Validate())
             {
-                if (MessageBox.Show("Do you want to save changes?", "Save", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    SaveData();
+                tbTeacherBindingSource.EndEdit();
+                if (dbDataSet.HasChanges())
+                {
+                    if (MessageBox.Show("Do you want to save changes?", "Save", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        SaveData();
+                }
             }
+            else
+                e.Cancel = true;
+
+
         }
 
         private void SaveData()
         {
             try
             {
-                Validate();
-                tbTeacherBindingSource.EndEdit();
-                tableAdapterManager.UpdateAll(dbDataSet);
+                if (Validate())
+                {
+                    tbTeacherBindingSource.EndEdit();
+                    tableAdapterManager.UpdateAll(dbDataSet);
 
-                MessageBox.Show("Saved");
+                    MessageBox.Show("Saved");
+                }
+                else
+                    MessageBox.Show("Please address validation errors first", "Save");
             }
             catch (Exception ex)
             {
@@ -158,6 +171,20 @@ namespace DataControls
         {
             tbTeacherBindingSource.Filter = $" lastName LIKE '{tbxFilter.Text}%'";
 
+        }
+
+        #endregion
+
+        #region " Validation "
+
+       
+        private void DobDateTimePicker_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (DobDateTimePicker.Value.AddYears(18) > DateTime.Now)
+            {
+                MessageBox.Show("Should be at least 18 years old");
+                e.Cancel = true;
+            }
         }
 
         #endregion

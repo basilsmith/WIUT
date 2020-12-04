@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label Label2;
             System.Windows.Forms.Label Label3;
             System.Windows.Forms.Label Label4;
@@ -42,28 +41,31 @@
             System.Windows.Forms.Label PhoneLabel;
             System.Windows.Forms.Label Label1;
             System.Windows.Forms.Label CountryIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dbDataSet = new DataControls.dbDataSet();
             this.tbTeacherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbTeacherTableAdapter = new DataControls.dbDataSetTableAdapters.tbTeacherTableAdapter();
             this.tableAdapterManager = new DataControls.dbDataSetTableAdapters.TableAdapterManager();
+            this.tbCountryTableAdapter = new DataControls.dbDataSetTableAdapters.tbCountryTableAdapter();
             this.tbTeacherBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.tbTeacherBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbxNewCountry = new System.Windows.Forms.ComboBox();
+            this.tbCountryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.nudNewGrade = new System.Windows.Forms.NumericUpDown();
             this.tbxNewFirstName = new System.Windows.Forms.TextBox();
             this.tbxNewLastName = new System.Windows.Forms.TextBox();
@@ -71,6 +73,7 @@
             this.tbxNewPhone = new System.Windows.Forms.TextBox();
             this.chbNewIsActive = new System.Windows.Forms.CheckBox();
             this.CountryIdComboBox = new System.Windows.Forms.ComboBox();
+            this.tbCountryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbxFilter = new System.Windows.Forms.TextBox();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -83,9 +86,6 @@
             this.DobDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.IsActiveCheckBox = new System.Windows.Forms.CheckBox();
-            this.tbCountryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbCountryTableAdapter = new DataControls.dbDataSetTableAdapters.tbCountryTableAdapter();
-            this.tbCountryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             Label2 = new System.Windows.Forms.Label();
             Label3 = new System.Windows.Forms.Label();
             Label4 = new System.Windows.Forms.Label();
@@ -103,11 +103,119 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbTeacherBindingNavigator)).BeginInit();
             this.tbTeacherBindingNavigator.SuspendLayout();
             this.GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNewGrade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCountryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCountryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNewGrade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCountryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Label2
+            // 
+            Label2.AutoSize = true;
+            Label2.Location = new System.Drawing.Point(6, 16);
+            Label2.Name = "Label2";
+            Label2.Size = new System.Drawing.Size(55, 13);
+            Label2.TabIndex = 23;
+            Label2.Text = "First name";
+            // 
+            // Label3
+            // 
+            Label3.AutoSize = true;
+            Label3.Location = new System.Drawing.Point(6, 42);
+            Label3.Name = "Label3";
+            Label3.Size = new System.Drawing.Size(56, 13);
+            Label3.TabIndex = 25;
+            Label3.Text = "Last name";
+            // 
+            // Label4
+            // 
+            Label4.AutoSize = true;
+            Label4.Location = new System.Drawing.Point(6, 69);
+            Label4.Name = "Label4";
+            Label4.Size = new System.Drawing.Size(28, 13);
+            Label4.TabIndex = 27;
+            Label4.Text = "DoB";
+            // 
+            // Label5
+            // 
+            Label5.AutoSize = true;
+            Label5.Location = new System.Drawing.Point(6, 94);
+            Label5.Name = "Label5";
+            Label5.Size = new System.Drawing.Size(38, 13);
+            Label5.TabIndex = 29;
+            Label5.Text = "Phone";
+            // 
+            // Label6
+            // 
+            Label6.AutoSize = true;
+            Label6.Location = new System.Drawing.Point(6, 119);
+            Label6.Name = "Label6";
+            Label6.Size = new System.Drawing.Size(36, 13);
+            Label6.TabIndex = 31;
+            Label6.Text = "Grade";
+            // 
+            // Label7
+            // 
+            Label7.AutoSize = true;
+            Label7.Location = new System.Drawing.Point(6, 176);
+            Label7.Name = "Label7";
+            Label7.Size = new System.Drawing.Size(43, 13);
+            Label7.TabIndex = 33;
+            Label7.Text = "Country";
+            // 
+            // FirstNameLabel
+            // 
+            FirstNameLabel.AutoSize = true;
+            FirstNameLabel.Location = new System.Drawing.Point(148, 31);
+            FirstNameLabel.Name = "FirstNameLabel";
+            FirstNameLabel.Size = new System.Drawing.Size(55, 13);
+            FirstNameLabel.TabIndex = 38;
+            FirstNameLabel.Text = "First name";
+            // 
+            // LastNameLabel
+            // 
+            LastNameLabel.AutoSize = true;
+            LastNameLabel.Location = new System.Drawing.Point(148, 57);
+            LastNameLabel.Name = "LastNameLabel";
+            LastNameLabel.Size = new System.Drawing.Size(56, 13);
+            LastNameLabel.TabIndex = 40;
+            LastNameLabel.Text = "Last name";
+            // 
+            // DobLabel
+            // 
+            DobLabel.AutoSize = true;
+            DobLabel.Location = new System.Drawing.Point(148, 84);
+            DobLabel.Name = "DobLabel";
+            DobLabel.Size = new System.Drawing.Size(28, 13);
+            DobLabel.TabIndex = 42;
+            DobLabel.Text = "DoB";
+            // 
+            // PhoneLabel
+            // 
+            PhoneLabel.AutoSize = true;
+            PhoneLabel.Location = new System.Drawing.Point(148, 109);
+            PhoneLabel.Name = "PhoneLabel";
+            PhoneLabel.Size = new System.Drawing.Size(38, 13);
+            PhoneLabel.TabIndex = 44;
+            PhoneLabel.Text = "Phone";
+            // 
+            // Label1
+            // 
+            Label1.AutoSize = true;
+            Label1.Location = new System.Drawing.Point(148, 134);
+            Label1.Name = "Label1";
+            Label1.Size = new System.Drawing.Size(36, 13);
+            Label1.TabIndex = 46;
+            Label1.Text = "Grade";
+            // 
+            // CountryIdLabel
+            // 
+            CountryIdLabel.AutoSize = true;
+            CountryIdLabel.Location = new System.Drawing.Point(148, 191);
+            CountryIdLabel.Name = "CountryIdLabel";
+            CountryIdLabel.Size = new System.Drawing.Size(43, 13);
+            CountryIdLabel.TabIndex = 48;
+            CountryIdLabel.Text = "Country";
             // 
             // dbDataSet
             // 
@@ -118,6 +226,7 @@
             // 
             this.tbTeacherBindingSource.DataMember = "tbTeacher";
             this.tbTeacherBindingSource.DataSource = this.dbDataSet;
+            this.tbTeacherBindingSource.CurrentChanged += new System.EventHandler(this.tbTeacherBindingSource_CurrentChanged);
             // 
             // tbTeacherTableAdapter
             // 
@@ -129,6 +238,10 @@
             this.tableAdapterManager.tbCountryTableAdapter = this.tbCountryTableAdapter;
             this.tableAdapterManager.tbTeacherTableAdapter = this.tbTeacherTableAdapter;
             this.tableAdapterManager.UpdateOrder = DataControls.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // tbCountryTableAdapter
+            // 
+            this.tbCountryTableAdapter.ClearBeforeFill = true;
             // 
             // tbTeacherBindingNavigator
             // 
@@ -160,6 +273,31 @@
             this.tbTeacherBindingNavigator.TabIndex = 0;
             this.tbTeacherBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -187,22 +325,16 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -210,7 +342,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -219,38 +351,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // tbTeacherBindingNavigatorSaveItem
             // 
             this.tbTeacherBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tbTeacherBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tbTeacherBindingNavigatorSaveItem.Image")));
             this.tbTeacherBindingNavigatorSaveItem.Name = "tbTeacherBindingNavigatorSaveItem";
-            this.tbTeacherBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.tbTeacherBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.tbTeacherBindingNavigatorSaveItem.Text = "Save Data";
             this.tbTeacherBindingNavigatorSaveItem.Click += new System.EventHandler(this.tbTeacherBindingNavigatorSaveItem_Click);
             // 
@@ -318,21 +432,17 @@
             this.cbxNewCountry.TabIndex = 35;
             this.cbxNewCountry.ValueMember = "Id";
             // 
+            // tbCountryBindingSource1
+            // 
+            this.tbCountryBindingSource1.DataMember = "tbCountry";
+            this.tbCountryBindingSource1.DataSource = this.dbDataSet;
+            // 
             // nudNewGrade
             // 
             this.nudNewGrade.Location = new System.Drawing.Point(70, 117);
             this.nudNewGrade.Name = "nudNewGrade";
             this.nudNewGrade.Size = new System.Drawing.Size(200, 20);
             this.nudNewGrade.TabIndex = 34;
-            // 
-            // Label2
-            // 
-            Label2.AutoSize = true;
-            Label2.Location = new System.Drawing.Point(6, 16);
-            Label2.Name = "Label2";
-            Label2.Size = new System.Drawing.Size(55, 13);
-            Label2.TabIndex = 23;
-            Label2.Text = "First name";
             // 
             // tbxNewFirstName
             // 
@@ -341,30 +451,12 @@
             this.tbxNewFirstName.Size = new System.Drawing.Size(200, 20);
             this.tbxNewFirstName.TabIndex = 24;
             // 
-            // Label3
-            // 
-            Label3.AutoSize = true;
-            Label3.Location = new System.Drawing.Point(6, 42);
-            Label3.Name = "Label3";
-            Label3.Size = new System.Drawing.Size(56, 13);
-            Label3.TabIndex = 25;
-            Label3.Text = "Last name";
-            // 
             // tbxNewLastName
             // 
             this.tbxNewLastName.Location = new System.Drawing.Point(70, 39);
             this.tbxNewLastName.Name = "tbxNewLastName";
             this.tbxNewLastName.Size = new System.Drawing.Size(200, 20);
             this.tbxNewLastName.TabIndex = 26;
-            // 
-            // Label4
-            // 
-            Label4.AutoSize = true;
-            Label4.Location = new System.Drawing.Point(6, 69);
-            Label4.Name = "Label4";
-            Label4.Size = new System.Drawing.Size(28, 13);
-            Label4.TabIndex = 27;
-            Label4.Text = "DoB";
             // 
             // dtpNewDoB
             // 
@@ -375,30 +467,12 @@
             this.dtpNewDoB.Size = new System.Drawing.Size(200, 20);
             this.dtpNewDoB.TabIndex = 28;
             // 
-            // Label5
-            // 
-            Label5.AutoSize = true;
-            Label5.Location = new System.Drawing.Point(6, 94);
-            Label5.Name = "Label5";
-            Label5.Size = new System.Drawing.Size(38, 13);
-            Label5.TabIndex = 29;
-            Label5.Text = "Phone";
-            // 
             // tbxNewPhone
             // 
             this.tbxNewPhone.Location = new System.Drawing.Point(70, 91);
             this.tbxNewPhone.Name = "tbxNewPhone";
             this.tbxNewPhone.Size = new System.Drawing.Size(200, 20);
             this.tbxNewPhone.TabIndex = 30;
-            // 
-            // Label6
-            // 
-            Label6.AutoSize = true;
-            Label6.Location = new System.Drawing.Point(6, 119);
-            Label6.Name = "Label6";
-            Label6.Size = new System.Drawing.Size(36, 13);
-            Label6.TabIndex = 31;
-            Label6.Text = "Grade";
             // 
             // chbNewIsActive
             // 
@@ -409,15 +483,6 @@
             this.chbNewIsActive.TabIndex = 32;
             this.chbNewIsActive.Text = "Active";
             this.chbNewIsActive.UseVisualStyleBackColor = true;
-            // 
-            // Label7
-            // 
-            Label7.AutoSize = true;
-            Label7.Location = new System.Drawing.Point(6, 176);
-            Label7.Name = "Label7";
-            Label7.Size = new System.Drawing.Size(43, 13);
-            Label7.TabIndex = 33;
-            Label7.Text = "Country";
             // 
             // CountryIdComboBox
             // 
@@ -430,6 +495,11 @@
             this.CountryIdComboBox.Size = new System.Drawing.Size(200, 21);
             this.CountryIdComboBox.TabIndex = 56;
             this.CountryIdComboBox.ValueMember = "Id";
+            // 
+            // tbCountryBindingSource
+            // 
+            this.tbCountryBindingSource.DataMember = "tbCountry";
+            this.tbCountryBindingSource.DataSource = this.dbDataSet;
             // 
             // tbxFilter
             // 
@@ -497,15 +567,6 @@
             this.lbTeachers.Size = new System.Drawing.Size(120, 186);
             this.lbTeachers.TabIndex = 49;
             // 
-            // FirstNameLabel
-            // 
-            FirstNameLabel.AutoSize = true;
-            FirstNameLabel.Location = new System.Drawing.Point(148, 31);
-            FirstNameLabel.Name = "FirstNameLabel";
-            FirstNameLabel.Size = new System.Drawing.Size(55, 13);
-            FirstNameLabel.TabIndex = 38;
-            FirstNameLabel.Text = "First name";
-            // 
             // FirstNameTextBox
             // 
             this.FirstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbTeacherBindingSource, "firstName", true));
@@ -514,15 +575,6 @@
             this.FirstNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.FirstNameTextBox.TabIndex = 39;
             // 
-            // LastNameLabel
-            // 
-            LastNameLabel.AutoSize = true;
-            LastNameLabel.Location = new System.Drawing.Point(148, 57);
-            LastNameLabel.Name = "LastNameLabel";
-            LastNameLabel.Size = new System.Drawing.Size(56, 13);
-            LastNameLabel.TabIndex = 40;
-            LastNameLabel.Text = "Last name";
-            // 
             // LastNameTextBox
             // 
             this.LastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbTeacherBindingSource, "lastName", true));
@@ -530,15 +582,6 @@
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.LastNameTextBox.TabIndex = 41;
-            // 
-            // DobLabel
-            // 
-            DobLabel.AutoSize = true;
-            DobLabel.Location = new System.Drawing.Point(148, 84);
-            DobLabel.Name = "DobLabel";
-            DobLabel.Size = new System.Drawing.Size(28, 13);
-            DobLabel.TabIndex = 42;
-            DobLabel.Text = "DoB";
             // 
             // DobDateTimePicker
             // 
@@ -549,15 +592,7 @@
             this.DobDateTimePicker.Name = "DobDateTimePicker";
             this.DobDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.DobDateTimePicker.TabIndex = 43;
-            // 
-            // PhoneLabel
-            // 
-            PhoneLabel.AutoSize = true;
-            PhoneLabel.Location = new System.Drawing.Point(148, 109);
-            PhoneLabel.Name = "PhoneLabel";
-            PhoneLabel.Size = new System.Drawing.Size(38, 13);
-            PhoneLabel.TabIndex = 44;
-            PhoneLabel.Text = "Phone";
+            this.DobDateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.DobDateTimePicker_Validating);
             // 
             // PhoneTextBox
             // 
@@ -566,15 +601,6 @@
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(200, 20);
             this.PhoneTextBox.TabIndex = 45;
-            // 
-            // Label1
-            // 
-            Label1.AutoSize = true;
-            Label1.Location = new System.Drawing.Point(148, 134);
-            Label1.Name = "Label1";
-            Label1.Size = new System.Drawing.Size(36, 13);
-            Label1.TabIndex = 46;
-            Label1.Text = "Grade";
             // 
             // IsActiveCheckBox
             // 
@@ -586,29 +612,6 @@
             this.IsActiveCheckBox.TabIndex = 47;
             this.IsActiveCheckBox.Text = "Active";
             this.IsActiveCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // CountryIdLabel
-            // 
-            CountryIdLabel.AutoSize = true;
-            CountryIdLabel.Location = new System.Drawing.Point(148, 191);
-            CountryIdLabel.Name = "CountryIdLabel";
-            CountryIdLabel.Size = new System.Drawing.Size(43, 13);
-            CountryIdLabel.TabIndex = 48;
-            CountryIdLabel.Text = "Country";
-            // 
-            // tbCountryBindingSource
-            // 
-            this.tbCountryBindingSource.DataMember = "tbCountry";
-            this.tbCountryBindingSource.DataSource = this.dbDataSet;
-            // 
-            // tbCountryTableAdapter
-            // 
-            this.tbCountryTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbCountryBindingSource1
-            // 
-            this.tbCountryBindingSource1.DataMember = "tbCountry";
-            this.tbCountryBindingSource1.DataSource = this.dbDataSet;
             // 
             // Form1
             // 
@@ -649,10 +652,10 @@
             this.tbTeacherBindingNavigator.PerformLayout();
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNewGrade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCountryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbCountryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNewGrade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCountryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
